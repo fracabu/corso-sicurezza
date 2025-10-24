@@ -1,0 +1,5 @@
+{
+  "name": "Formazione Sicurezza sul Lavoro Quiz",
+  "description": "An interactive web application for the Italian workplace safety training course (Formazione Sicurezza sul Lavoro). It includes learning modules and a final test to assess knowledge based on D.Lgs. 81/2008.",
+  "requestFramePermissions": []
+}
