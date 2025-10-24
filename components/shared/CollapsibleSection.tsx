@@ -23,7 +23,7 @@ const CollapsibleSection: React.FC<CollapsibleSectionProps> = ({ title, children
           isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
-        <div className="mt-3 p-4 bg-gray-50 rounded-lg border border-gray-200">
+          <div className="mt-3 p-4 bg-gray-50 rounded-lg border border-gray-200 break-words whitespace-normal">
           {children}
         </div>
       </div>

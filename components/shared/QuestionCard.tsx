@@ -25,29 +25,29 @@ const QuestionCard: React.FC<QuestionCardProps> = ({ question, questionNumber, s
   };
 
   return (
-    <div className="bg-white p-6 rounded-xl shadow-lg transition-all">
+    <div className="bg-white p-6 rounded-xl shadow-lg transition-all break-words">
       <p className="text-sm font-semibold text-cyan-600 mb-2">Domanda {questionNumber}</p>
-      {question.scenario && <p className="text-gray-500 italic mb-3 bg-gray-50 p-3 rounded-md">{question.scenario}</p>}
-      <h3 className="text-lg font-bold text-gray-800 mb-4">{question.question}</h3>
+      {question.scenario && <p className="text-gray-500 italic mb-3 bg-gray-50 p-3 rounded-md break-words whitespace-normal">{question.scenario}</p>}
+      <h3 className="text-lg font-bold text-gray-800 mb-4 break-words whitespace-normal">{question.question}</h3>
       <div className="space-y-3">
         {question.options.map((option, i) => (
           <button
             key={i}
             onClick={() => onAnswerChange(option)}
             disabled={submitted}
-            className={`w-full text-left p-4 border rounded-lg transition-all text-gray-700 ${getOptionClass(option)} ${!submitted ? 'cursor-pointer' : 'cursor-not-allowed'}`}
-          >
-            <span className="font-medium">{option}</span>
+            className={`w-full text-left p-4 border rounded-lg transition-all text-gray-700 ${getOptionClass(option)} ${!submitted ? 'cursor-pointer' : 'cursor-not-allowed'}`}>
+            <span className="font-medium break-words whitespace-normal">{option}</span>
           </button>
         ))}
       </div>
       {submitted && (
         <div className="mt-4 p-4 rounded-lg bg-gray-100 border border-gray-200">
           <p className="font-bold text-gray-700 mb-1">
-            {selectedAnswer === question.correctAnswer ? 
-                <span className="text-green-600"><i className="fas fa-check-circle mr-2"></i>Risposta Corretta</span> : 
-                <span className="text-red-600"><i className="fas fa-times-circle mr-2"></i>Risposta Sbagliata</span>
-            }
+            {selectedAnswer === question.correctAnswer ? (
+              <span className="text-green-600"><i className="fas fa-check-circle mr-2"></i>Risposta Corretta</span>
+            ) : (
+              <span className="text-red-600"><i className="fas fa-times-circle mr-2"></i>Risposta Sbagliata</span>
+            )}
           </p>
           <p className="text-sm text-gray-600">{question.explanation}</p>
         </div>
